@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Card from "./components/Card";
 
-const quizData = [
+
+const questions = [
   {
     category: "General Knowledge",
     question: "What is the capital of France?",
@@ -68,44 +69,34 @@ const quizData = [
   },
 ];
 
+
 const App = () => {
-  const [showCard, setShowCard] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [score, setScore] = useState(0);
 
   const nextQuestion = () => {
-    setCurrentIndex((prev) => (prev < quizData.length - 1 ? prev + 1 : prev));
+    if (currentIndex < questions.length - 1) {
+      setCurrentIndex((prev) => prev + 1);
+    } else {
+      alert(`Quiz finished! Final score: ${score}`);
+    }
   };
 
-  return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center px-4">
-      {!showCard ? (
-        <div className="text-center max-w-xl">
-          <button
-            onClick={() => setShowCard(true)}
-            className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold shadow-lg transition"
-          >
-            Start...
-          </button>
+  const current = questions[currentIndex];
 
-          <p className="mt-8 text-gray-300 text-lg leading-8">
-            Test your knowledge with fun and interactive quizzes on different
-            topics. Choose an answer, track your score, and see how well you do
-            at the end. Perfect for learning, practicing, and challenging
-            yourself.
-          </p>
-        </div>
-      ) : (
-        <div className="w-full max-w-4xl">
-          <Card
-            q={quizData[currentIndex].question}
-            o={quizData[currentIndex].options}
-            answer={quizData[currentIndex].answer}
-            next={nextQuestion}
-          />
-        </div>
-      )}
+  return (
+    <div className="min-h-screen bg-black flex items-center justify-center">
+      <Card
+        q={current.question}
+        o={current.options}
+        answer={current.answer}
+        next={nextQuestion}
+        score={score}
+        setScore={setScore}
+      />
     </div>
   );
 };
 
 export default App;
+

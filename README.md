@@ -1,61 +1,78 @@
-# Quiz Questions
+# Quiz App
+`
+A simple, card-based multiple-choice quiz app with instant visual feedback, score tracking, and an optional countdown timer.
 
-## General Knowledge
+## Features
 
-**What is the capital of France?**
-- Paris
-- London
-- Rome
-- Berlin
+- **Intro screen** — a short description of the quiz and a Start button
+- **Card-based questions** — one multiple-choice question shown at a time
+- **Instant feedback** — selected answer is highlighted, correct answer turns green, incorrect turns red, and the correct answer is revealed
+- **Score tracking** — score increases by 1 for each correct answer
+- **Results screen** — final score plus a full summary of how each question was answered
+- **Optional timer** — 1-minute countdown per question; if time runs out, the app auto-advances and deducts 1 point
 
-**Which planet is known as the Red Planet?**
-- Earth
-- Mars
-- Jupiter
-- Venus
+## How It Works
 
-**What is the largest ocean on Earth?**
-- Atlantic Ocean
-- Indian Ocean
-- Arctic Ocean
-- Pacific Ocean
+1. User lands on the intro screen and clicks **Start**
+2. The first question appears in a card with answer buttons
+3. User selects an answer:
+   - The button they picked is highlighted
+   - Correct answer turns green, wrong answer turns red
+   - If a timer is enabled and expires, the app moves on automatically and subtracts a point
+4. Once all questions are answered, a final results screen shows:
+   - Total score
+   - A breakdown of every question, the answer chosen, and whether it was correct
 
-## Technology
+## Tech Stack
 
-**Which language is primarily used for web pages?**
-- Python
-- Java
-- HTML
-- C++
+- React
+- Vite
+- Tailwind CSS
 
-**What does CSS stand for?**
-- Computer Style Sheets
-- Cascading Style Sheets
-- Creative Style System
-- Colorful Style Sheets
+*(Update this section to match your actual stack if different.)*
 
-**Which company created React?**
-- Google
-- Microsoft
-- Meta
-- Apple
+## Getting Started
 
-## Easy Mixed Questions
+```bash
+# Clone the repo
+git clone <your-repo-url>
+cd <your-repo-folder>
 
-**How many days are there in a week?**
-- 5
-- 6
-- 7
-- 8
+# Install dependencies
+npm install
 
-**What color do you get when you mix red and white?**
-- Pink
-- Purple
-- Orange
-- Brown
+# Run the dev server
+npm run dev
+```
 
-**Which animal barks?**
-- Cat
-- Dog
-- Cow
-- Fish
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Intro.jsx
+│   ├── QuestionCard.jsx
+│   ├── Timer.jsx
+│   └── Results.jsx
+├── data/
+│   └── questions.js
+├── App.jsx
+└── main.jsx
+```
+
+*(Adjust to match your real folder layout.)*
+
+## Adding Questions
+
+Questions are stored in a simple array/object format with a prompt, answer options, and the correct answer index. Add new entries to the questions data file to expand the quiz.
+
+## Roadmap / Ideas
+
+- Categories/difficulty selection
+- Persist high scores
+- Shuffle questions and answers
+- Share results
+
+## License
+
+MIT
