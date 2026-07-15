@@ -31,6 +31,10 @@ A simple, card-based multiple-choice quiz app with instant visual feedback, scor
 
 *(Update this section to match your actual stack if different.)*
 
+## Screenshots
+
+![Quiz question with timer and score](./screenshot.png)
+
 ## Getting Started
 
 ```bash
