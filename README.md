@@ -1,5 +1,5 @@
 # Quiz App
-`
+
 A simple, card-based multiple-choice quiz app with instant visual feedback, score tracking, and an optional countdown timer.
 
 ## Features
@@ -35,8 +35,8 @@ A simple, card-based multiple-choice quiz app with instant visual feedback, scor
 
 ```bash
 # Clone the repo
-git clone <your-repo-url>
-cd <your-repo-folder>
+git clone https://github.com/WorldRuler-sai/quiz.git
+cd quiz
 
 # Install dependencies
 npm install
@@ -48,19 +48,24 @@ npm run dev
 ## Project Structure
 
 ```
-src/
-├── components/
-│   ├── Intro.jsx
-│   ├── QuestionCard.jsx
-│   ├── Timer.jsx
-│   └── Results.jsx
-├── data/
-│   └── questions.js
-├── App.jsx
-└── main.jsx
+quiz/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── Card.jsx
+│   │   └── Timer.jsx
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── .gitignore
+├── .oxlintrc.json
+├── index.html
+├── package.json
+├── package-lock.json
+├── README.md
+└── vite.config.js
 ```
-
-*(Adjust to match your real folder layout.)*
 
 ## Adding Questions
 
